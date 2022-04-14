@@ -167,6 +167,46 @@ function mdToHtml(str){
 				}
 			}
 		}
+		if(str[pos]=="<"){ //link
+			let lst=findString(str,pos+1,">");
+			if(lst!=-1){
+				res+="<a class=\"md-link md-short-link\" href=\""
+				    +str.substr(pos+1,(lst-1)-(pos+1)+1)
+					+"\">"
+					+str.substr(pos+1,(lst-1)-(pos+1)+1)
+					+"</a>"
+			}
+		}
+		if(str[pos]=="["){ //link
+			let lstt=findString(str,pos+1,"]");
+			if(lstt!=-1&&lstt+1<str.length&&str[lstt+1]=="("){
+				let lstl=findString(str,lstt+2,")");
+				if(lstl!=-1){
+					res+="<a class=\"md-link\" href=\""
+					    +str.substr(lstt+2,(lstl-1)-(lstt+2)+1)
+						+"\">"
+						+mdToHtml(str.substr(pos+1,(lstt-1)-(pos+1)+1))
+						+"</a>";
+					pos=lstl+1;
+					continue
+				}
+			}
+		}
+		if(pos+1<str.length&&str[pos]=="!"&&str[pos+1]=="["){ //picture
+			let lstt=findString(str,pos+2,"]");
+			if(lstt!=-1&&lstt+1<str.length&&str[lstt+1]=="("){
+				let lstl=findString(str,lstt+2,")");
+				if(lstl!=-1){
+					res+="<img class=\"md-picture\" src=\""
+					    +str.substr(lstt+2,(lstl-1)-(lstt+2)+1)
+						+"\" alt=\""
+						+str.substr(pos+2,(lstt-1)-(pos+2)+1)
+						+"\">";
+					pos=lstl+1;
+					continue
+				}
+			}
+		}
 		if(pos!=str.length-1&&str[pos]=="\\"){
 			res+=str[pos+1];
 			pos+=2;
