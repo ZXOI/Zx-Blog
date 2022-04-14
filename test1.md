@@ -3,6 +3,9 @@ SLC AK IOI !
 ---
 $\KaTeX$ in line
 $$\KaTeX between line$$
+$$
+\sum_{i=1}^na_i
+$$
 > quote
 > > quote2
 > + quote with unordered list
