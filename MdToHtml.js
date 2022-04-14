@@ -1,7 +1,5 @@
 function renderKatex(str){
-	katex.render(str,document.getElementById("katex-render-temp"),{throwOnError:false});
-	let res=document.getElementById("katex-render-temp").innerHTML;
-	document.getElementById("katex-render-temp").innerHTML="";
+	let res=katex.renderToString(str,{throwOnError:false});
 	return res;
 }
 function findString(str,pos,ch,dir=1){
