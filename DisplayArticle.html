@@ -17,6 +17,7 @@ function readFile(fileName,returnFunction){
 function loadArticle(){
 	let param=window.location.search;
 	let atc=param.substr(findString(param,0,"=")+1);
+	console.log(param,atc);
 	readFile(atc,function(str){
 		str=mdToHtml(str);
 		document.getElementById("md-container").innerHTML=str;
