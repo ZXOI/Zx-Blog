@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.css" integrity="sha384-A3N+UgNMKg9+LRsC2HUE0ECxFY7qhztVFORxHQZEPm7lnog2poqmm7CQ91wSEnBc" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.js" integrity="sha384-D0gipC03W+lifpletIVjX+11DUvrzNAMhVux0JrrAMt9Ufgu9HcPdS5GxZSDmNxx" crossorigin="anonymous"></script>
+<script src="./MdToHtml.js"></script>
+<link rel="stylesheet" href="./MdShow.css"></link>
+<div id="katex-render-temp" style="display:none"></div>
+<div id="main-article-container" class="article-container">
+	<div id="md-container" class="md-container"></div>
+</div>
+<script>
+function readFile(fileName,returnFunction){
+	$.get("./"+fileName,function(data,status){
+		console.log("Raw md:",data);
+		returnFunction(data);
+	});
+}
+function test(){
+	readFile("test1.md",function(str){
+		str=mdToHtml(str);
+		document.getElementById("md-container").innerHTML=str;
+	});
+}
+onload=test();
+</script>

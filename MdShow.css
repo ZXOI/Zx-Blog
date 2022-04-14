@@ -1,0 +1,70 @@
+.md-separate-line{
+	padding-top: 1px;
+	padding-bottom: 1px;
+	background-color: lightgray;
+}
+.md-unordered-list-head{
+	position: relative;
+	bottom: 2px;
+	display: inline-block;
+	border: 3px solid black;
+	border-radius: 3px;
+	margin-left: 20px;
+	margin-right: 5px;
+}
+.md-header{
+	margin: 0px;
+}
+.md-quote{
+	border-left: 3px solid lightgray;
+	padding-left: 10px;
+	color: #555;
+}
+.md-strong{
+	font-weight: bold;
+}
+.md-italic{
+	font-style: italic;
+}
+.md-strikeout{
+	text-decoration: line-through;
+}
+.md-codebox-in-line{
+	border: 1px solid gray;
+	border-radius: 3px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 3px;
+	padding-right: 3px;
+	background-color: #EEE;
+	font-family: monospace;
+	white-space: pre;
+}
+.md-codebox-between-line{
+	overflow-x: scroll;
+	border: 2px solid gray;
+	border-radius: 3px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 3px;
+	padding-right: 3px;
+	background-color: #EEE;
+	font-family: monospace;
+	white-space: pre;
+}
+.md-space-between-line{
+	width: 100%;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.md-container{
+	word-wrap: break-word;
+	word-break: normal;
+	font-size: 16px;
+}
+.katex{
+	font-size: 20px;
+}
+.katex-container-between-line{
+	text-align: center;
+}
